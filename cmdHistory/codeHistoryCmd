@@ -1,0 +1,4 @@
+cd
+cd Desktop/cmdHistory/
+history>$(date +%d%m%Y)cmdhty.txt
+cd

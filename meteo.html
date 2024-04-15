@@ -1,0 +1,790 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../css/previsao.css">
+
+    <title>Previsão ECM-AROME</title>
+  </head>
+  <body>
+
+
+	<h5 style = "text-align: center;">
+		<strong>
+			Previsão Diária para 10 Dias para Leiria (Modelos ECMWF e AROME)		</strong>
+	</h5>
+	
+	<div class="alert alert-dark alert-dismissible fade show" role="alert">		
+		<strong>
+			Última atualização do Modelo de Previsão: 		</strong>
+			Segunda-feira, 11-09-2023 às 08h25m (Hora UTC)	
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>	
+	
+		
+	</div>
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">
+				<a href="localidade1.php"> Voltar </a>
+			</button> 
+			
+    		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">
+				<a href="../ajuda/help.php" target="_blank"> Ajuda </a>
+			</button>
+  		</div>
+	</nav>
+	
+		
+		
+	
+	<input type="hidden" id="numDias" value="10">
+
+	<table class="table">
+	  <thead>
+		<tr>
+		  <th  style="border-bottom-style: none;" scope="col" class="text-center"></th>
+		  <th  style="border-bottom-style: none;" scope="col" class="text-center"></th>
+		  <th  style="border-bottom-style: none;" scope="col" class="text-center header-precipitation" colspan="2">Precipitação</th>
+		  <th  style="border-bottom-style: none;" scope="col" class="text-center header-temperature" colspan="4">Temperatura do Ar</th>
+		  <th  style="border-bottom-style: none;" scope="col" class="text-center header-wind" colspan="3">Vento</th>
+		  <th  style="border-bottom-style: none;" scope="col" class="text-center header-UV"></th>
+		</tr>	  
+		<tr>
+		  <th style="width:10%; border-top-style: none;" scope="col" class="text-center">Dia <br>(Dia Sem.)</th>
+		  <th style="width:8%; border-top-style: none;" scope="col" class="text-center">Estado do tempo</th>
+		  <th style="width:8%; border-top-style: none;" scope="col" class="text-center header-precipitation">Intensidade</th>
+		  <th style="width:8%; border-top-style: none;" scope="col" class="text-center header-precipitation">Probabilidade(%)</th>
+		  <th style="width:8%; border-top-style: none;" scope="col" class="text-center header-temperature">Temp. Min.</th>
+		  <th style="width:8%; border-top-style: none;" scope="col" class="text-center header-temperature">Var. Min.</th>
+		  <th style="width:8%; border-top-style: none;" scope="col" class="text-center header-temperature">Temp. Max.</th>
+		  <th style="width:8%; border-top-style: none;" scope="col" class="text-center header-temperature">Var. Max.</th>
+		  <th style="width:8%; border-top-style: none;" scope="col" class="text-center header-wind">Dir. Vento</th>
+		  <th style="width:10%; border-top-style: none;" scope="col" class="text-center header-wind">Inten. Vento</th>
+		  <th style="width:8%; border-top-style: none;" scope="col" class="text-center header-wind">Icone Vento</th>
+		  <th style="width:8%; border-top-style: none;" scope="col" class="text-center header-UV">Intens. UV</th>
+		  </tr>
+	  </thead>
+	  <tbody>
+				<tr class="">
+			<!-- ****   DATA   **** -->			
+			<td class="text-center align-middle">
+				11<br/>(Seg)			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   ESTADO DO TEMPO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-tempo" src="../img/icones/EstadoTempo/6.svg" alt="Moderado" />			
+			</td>
+			<!-- ******************  -->		  
+
+			
+			<!-- ****   PRECIPITAÇÃO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-inten_prec" src="../img/icones/IntensPrecip/2.JPG" alt="Moderada" />					
+			</td>
+			<td class="text-center align-middle">
+								
+				<div class="box-inside-pp-table prob-precip-p75-100">			
+					91%				</div>	
+			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   TEMPERATURA DO AR   **** -->			
+						  
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p16">
+							
+				<div class="">
+					16				</div>	
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p0">
+					-				</div>
+			</td>
+							
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p24">
+				<div class="">
+					24				</div>				
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p0">
+					-				</div>				
+			</td>
+			<!-- ******************  -->		  
+		  
+		  
+			<!-- ****   VENTO   **** -->
+			<td id="ddVento0" class="text-center align-middle">
+				NW			</td>
+			<td class="text-center align-middle">
+				Fraco 
+			</td>
+			<td class="text-center align-middle">
+				<input type="hidden" id="rodarIconDV0" value="135">
+				<img id="iconDV0" class="app-icon-vento" src="../img/icones/ClassesVento/1.svg" alt="Fraco" />						
+			</td>
+			<!-- ******************  -->
+		  
+		  
+			<!-- ****   UV   **** -->
+			<td class="text-center align-middle">
+									<img class="app-icon-IUV" src="../img/icones/iUV/5.gif" alt="Moderado" />	
+							</td>
+			<!-- ******************  -->
+		</tr>
+				<tr class="">
+			<!-- ****   DATA   **** -->			
+			<td class="text-center align-middle">
+				12<br/>(Ter)			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   ESTADO DO TEMPO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-tempo" src="../img/icones/EstadoTempo/6.svg" alt="Moderado" />			
+			</td>
+			<!-- ******************  -->		  
+
+			
+			<!-- ****   PRECIPITAÇÃO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-inten_prec" src="../img/icones/IntensPrecip/2.JPG" alt="Moderada" />					
+			</td>
+			<td class="text-center align-middle">
+								
+				<div class="box-inside-pp-table prob-precip-p50-74">			
+					50%				</div>	
+			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   TEMPERATURA DO AR   **** -->			
+						  
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p16">
+							
+				<div class="">
+					16				</div>	
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p0">
+					0				</div>
+			</td>
+							
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p26">
+				<div class="">
+					25				</div>				
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p1">
+					+1				</div>				
+			</td>
+			<!-- ******************  -->		  
+		  
+		  
+			<!-- ****   VENTO   **** -->
+			<td id="ddVento1" class="text-center align-middle">
+				NW			</td>
+			<td class="text-center align-middle">
+				Fraco 
+			</td>
+			<td class="text-center align-middle">
+				<input type="hidden" id="rodarIconDV1" value="135">
+				<img id="iconDV1" class="app-icon-vento" src="../img/icones/ClassesVento/1.svg" alt="Fraco" />						
+			</td>
+			<!-- ******************  -->
+		  
+		  
+			<!-- ****   UV   **** -->
+			<td class="text-center align-middle">
+									<img class="app-icon-IUV" src="../img/icones/iUV/6.gif" alt="Moderado" />	
+							</td>
+			<!-- ******************  -->
+		</tr>
+				<tr class="">
+			<!-- ****   DATA   **** -->			
+			<td class="text-center align-middle">
+				13<br/>(Qua)			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   ESTADO DO TEMPO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-tempo" src="../img/icones/EstadoTempo/6.svg" alt="Moderado" />			
+			</td>
+			<!-- ******************  -->		  
+
+			
+			<!-- ****   PRECIPITAÇÃO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-inten_prec" src="../img/icones/IntensPrecip/2.JPG" alt="Moderada" />					
+			</td>
+			<td class="text-center align-middle">
+								
+				<div class="box-inside-pp-table prob-precip-p20-49">			
+					40%				</div>	
+			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   TEMPERATURA DO AR   **** -->			
+						  
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p16">
+							
+				<div class="">
+					15				</div>	
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-m1">
+					-1				</div>
+			</td>
+							
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p26">
+				<div class="">
+					26				</div>				
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p1">
+					+1				</div>				
+			</td>
+			<!-- ******************  -->		  
+		  
+		  
+			<!-- ****   VENTO   **** -->
+			<td id="ddVento2" class="text-center align-middle">
+				NW			</td>
+			<td class="text-center align-middle">
+				Fraco 
+			</td>
+			<td class="text-center align-middle">
+				<input type="hidden" id="rodarIconDV2" value="135">
+				<img id="iconDV2" class="app-icon-vento" src="../img/icones/ClassesVento/1.svg" alt="Fraco" />						
+			</td>
+			<!-- ******************  -->
+		  
+		  
+			<!-- ****   UV   **** -->
+			<td class="text-center align-middle">
+									<img class="app-icon-IUV" src="../img/icones/iUV/6.gif" alt="Moderado" />	
+							</td>
+			<!-- ******************  -->
+		</tr>
+				<tr class="">
+			<!-- ****   DATA   **** -->			
+			<td class="text-center align-middle">
+				14<br/>(Qui)			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   ESTADO DO TEMPO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-tempo" src="../img/icones/EstadoTempo/2.svg" alt="Moderado" />			
+			</td>
+			<!-- ******************  -->		  
+
+			
+			<!-- ****   PRECIPITAÇÃO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-inten_prec" src="../img/icones/IntensPrecip/0.JPG" alt="Moderada" />					
+			</td>
+			<td class="text-center align-middle">
+								
+				<div class="box-inside-pp-table prob-precip-p00-19">			
+					6%				</div>	
+			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   TEMPERATURA DO AR   **** -->			
+						  
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p16">
+							
+				<div class="">
+					16				</div>	
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p1">
+					+1				</div>
+			</td>
+							
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p28">
+				<div class="">
+					27				</div>				
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p1">
+					+1				</div>				
+			</td>
+			<!-- ******************  -->		  
+		  
+		  
+			<!-- ****   VENTO   **** -->
+			<td id="ddVento3" class="text-center align-middle">
+				NW			</td>
+			<td class="text-center align-middle">
+				Fraco 
+			</td>
+			<td class="text-center align-middle">
+				<input type="hidden" id="rodarIconDV3" value="135">
+				<img id="iconDV3" class="app-icon-vento" src="../img/icones/ClassesVento/1.svg" alt="Fraco" />						
+			</td>
+			<!-- ******************  -->
+		  
+		  
+			<!-- ****   UV   **** -->
+			<td class="text-center align-middle">
+									<img class="app-icon-IUV" src="../img/icones/iUV/7.gif" alt="Moderado" />	
+							</td>
+			<!-- ******************  -->
+		</tr>
+				<tr class="">
+			<!-- ****   DATA   **** -->			
+			<td class="text-center align-middle">
+				15<br/>(Sex)			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   ESTADO DO TEMPO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-tempo" src="../img/icones/EstadoTempo/3.svg" alt="Moderado" />			
+			</td>
+			<!-- ******************  -->		  
+
+			
+			<!-- ****   PRECIPITAÇÃO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-inten_prec" src="../img/icones/IntensPrecip/0.JPG" alt="Moderada" />					
+			</td>
+			<td class="text-center align-middle">
+								
+				<div class="box-inside-pp-table prob-precip-p20-49">			
+					38%				</div>	
+			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   TEMPERATURA DO AR   **** -->			
+						  
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p16">
+							
+				<div class="">
+					16				</div>	
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p0">
+					0				</div>
+			</td>
+							
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p24">
+				<div class="">
+					24				</div>				
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-m3">
+					-3				</div>				
+			</td>
+			<!-- ******************  -->		  
+		  
+		  
+			<!-- ****   VENTO   **** -->
+			<td id="ddVento4" class="text-center align-middle">
+				NW			</td>
+			<td class="text-center align-middle">
+				Fraco 
+			</td>
+			<td class="text-center align-middle">
+				<input type="hidden" id="rodarIconDV4" value="135">
+				<img id="iconDV4" class="app-icon-vento" src="../img/icones/ClassesVento/1.svg" alt="Fraco" />						
+			</td>
+			<!-- ******************  -->
+		  
+		  
+			<!-- ****   UV   **** -->
+			<td class="text-center align-middle">
+							</td>
+			<!-- ******************  -->
+		</tr>
+				<tr class="fds">
+			<!-- ****   DATA   **** -->			
+			<td class="text-center align-middle">
+				16<br/>(Sáb)			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   ESTADO DO TEMPO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-tempo" src="../img/icones/EstadoTempo/9.svg" alt="Moderado" />			
+			</td>
+			<!-- ******************  -->		  
+
+			
+			<!-- ****   PRECIPITAÇÃO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-inten_prec" src="../img/icones/IntensPrecip/2.JPG" alt="Moderada" />					
+			</td>
+			<td class="text-center align-middle">
+								
+				<div class="box-inside-pp-table prob-precip-p50-74">			
+					74%				</div>	
+			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   TEMPERATURA DO AR   **** -->			
+						  
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p16">
+							
+				<div class="">
+					16				</div>	
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p0">
+					0				</div>
+			</td>
+							
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p24">
+				<div class="">
+					24				</div>				
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p0">
+					0				</div>				
+			</td>
+			<!-- ******************  -->		  
+		  
+		  
+			<!-- ****   VENTO   **** -->
+			<td id="ddVento5" class="text-center align-middle">
+				S			</td>
+			<td class="text-center align-middle">
+				Moderado 
+			</td>
+			<td class="text-center align-middle">
+				<input type="hidden" id="rodarIconDV5" value="0">
+				<img id="iconDV5" class="app-icon-vento" src="../img/icones/ClassesVento/2.svg" alt="Moderado" />						
+			</td>
+			<!-- ******************  -->
+		  
+		  
+			<!-- ****   UV   **** -->
+			<td class="text-center align-middle">
+							</td>
+			<!-- ******************  -->
+		</tr>
+				<tr class="fds">
+			<!-- ****   DATA   **** -->			
+			<td class="text-center align-middle">
+				17<br/>(Dom)			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   ESTADO DO TEMPO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-tempo" src="../img/icones/EstadoTempo/7.svg" alt="Moderado" />			
+			</td>
+			<!-- ******************  -->		  
+
+			
+			<!-- ****   PRECIPITAÇÃO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-inten_prec" src="../img/icones/IntensPrecip/1.JPG" alt="Moderada" />					
+			</td>
+			<td class="text-center align-middle">
+								
+				<div class="box-inside-pp-table prob-precip-p50-74">			
+					64%				</div>	
+			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   TEMPERATURA DO AR   **** -->			
+						  
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p16">
+							
+				<div class="">
+					15				</div>	
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-m1">
+					-1				</div>
+			</td>
+							
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p24">
+				<div class="">
+					24				</div>				
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p0">
+					0				</div>				
+			</td>
+			<!-- ******************  -->		  
+		  
+		  
+			<!-- ****   VENTO   **** -->
+			<td id="ddVento6" class="text-center align-middle">
+				S			</td>
+			<td class="text-center align-middle">
+				Moderado 
+			</td>
+			<td class="text-center align-middle">
+				<input type="hidden" id="rodarIconDV6" value="0">
+				<img id="iconDV6" class="app-icon-vento" src="../img/icones/ClassesVento/2.svg" alt="Moderado" />						
+			</td>
+			<!-- ******************  -->
+		  
+		  
+			<!-- ****   UV   **** -->
+			<td class="text-center align-middle">
+							</td>
+			<!-- ******************  -->
+		</tr>
+				<tr class="">
+			<!-- ****   DATA   **** -->			
+			<td class="text-center align-middle">
+				18<br/>(Seg)			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   ESTADO DO TEMPO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-tempo" src="../img/icones/EstadoTempo/7.svg" alt="Moderado" />			
+			</td>
+			<!-- ******************  -->		  
+
+			
+			<!-- ****   PRECIPITAÇÃO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-inten_prec" src="../img/icones/IntensPrecip/1.JPG" alt="Moderada" />					
+			</td>
+			<td class="text-center align-middle">
+								
+				<div class="box-inside-pp-table prob-precip-p50-74">			
+					64%				</div>	
+			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   TEMPERATURA DO AR   **** -->			
+						  
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p16">
+							
+				<div class="">
+					15				</div>	
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p0">
+					0				</div>
+			</td>
+							
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p24">
+				<div class="">
+					23				</div>				
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-m1">
+					-1				</div>				
+			</td>
+			<!-- ******************  -->		  
+		  
+		  
+			<!-- ****   VENTO   **** -->
+			<td id="ddVento7" class="text-center align-middle">
+				SW			</td>
+			<td class="text-center align-middle">
+				Moderado 
+			</td>
+			<td class="text-center align-middle">
+				<input type="hidden" id="rodarIconDV7" value="45">
+				<img id="iconDV7" class="app-icon-vento" src="../img/icones/ClassesVento/2.svg" alt="Moderado" />						
+			</td>
+			<!-- ******************  -->
+		  
+		  
+			<!-- ****   UV   **** -->
+			<td class="text-center align-middle">
+							</td>
+			<!-- ******************  -->
+		</tr>
+				<tr class="">
+			<!-- ****   DATA   **** -->			
+			<td class="text-center align-middle">
+				19<br/>(Ter)			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   ESTADO DO TEMPO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-tempo" src="../img/icones/EstadoTempo/7.svg" alt="Moderado" />			
+			</td>
+			<!-- ******************  -->		  
+
+			
+			<!-- ****   PRECIPITAÇÃO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-inten_prec" src="../img/icones/IntensPrecip/1.JPG" alt="Moderada" />					
+			</td>
+			<td class="text-center align-middle">
+								
+				<div class="box-inside-pp-table prob-precip-p20-49">			
+					47%				</div>	
+			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   TEMPERATURA DO AR   **** -->			
+						  
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p14">
+							
+				<div class="">
+					14				</div>	
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-m1">
+					-1				</div>
+			</td>
+							
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p24">
+				<div class="">
+					23				</div>				
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p0">
+					0				</div>				
+			</td>
+			<!-- ******************  -->		  
+		  
+		  
+			<!-- ****   VENTO   **** -->
+			<td id="ddVento8" class="text-center align-middle">
+				NW			</td>
+			<td class="text-center align-middle">
+				Fraco 
+			</td>
+			<td class="text-center align-middle">
+				<input type="hidden" id="rodarIconDV8" value="135">
+				<img id="iconDV8" class="app-icon-vento" src="../img/icones/ClassesVento/1.svg" alt="Fraco" />						
+			</td>
+			<!-- ******************  -->
+		  
+		  
+			<!-- ****   UV   **** -->
+			<td class="text-center align-middle">
+							</td>
+			<!-- ******************  -->
+		</tr>
+				<tr class="">
+			<!-- ****   DATA   **** -->			
+			<td class="text-center align-middle">
+				20<br/>(Qua)			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   ESTADO DO TEMPO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-tempo" src="../img/icones/EstadoTempo/3.svg" alt="Moderado" />			
+			</td>
+			<!-- ******************  -->		  
+
+			
+			<!-- ****   PRECIPITAÇÃO   **** -->			
+			<td class="text-center align-middle">
+				<img class="app-icon-inten_prec" src="../img/icones/IntensPrecip/0.JPG" alt="Moderada" />					
+			</td>
+			<td class="text-center align-middle">
+								
+				<div class="box-inside-pp-table prob-precip-p20-49">			
+					27%				</div>	
+			</td>
+			<!-- ******************  -->		  
+			
+			
+			<!-- ****   TEMPERATURA DO AR   **** -->			
+						  
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p14">
+							
+				<div class="">
+					14				</div>	
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p0">
+					0				</div>
+			</td>
+							
+			<td class="text-center align-middle box-inside-val-ta-table valor-temp-p24">
+				<div class="">
+					24				</div>				
+			</td>
+			<td class="text-center align-middle">
+								<div class="box-inside-dif-ta-table diff-temp-p1">
+					+1				</div>				
+			</td>
+			<!-- ******************  -->		  
+		  
+		  
+			<!-- ****   VENTO   **** -->
+			<td id="ddVento9" class="text-center align-middle">
+				N			</td>
+			<td class="text-center align-middle">
+				Fraco 
+			</td>
+			<td class="text-center align-middle">
+				<input type="hidden" id="rodarIconDV9" value="180">
+				<img id="iconDV9" class="app-icon-vento" src="../img/icones/ClassesVento/1.svg" alt="Fraco" />						
+			</td>
+			<!-- ******************  -->
+		  
+		  
+			<!-- ****   UV   **** -->
+			<td class="text-center align-middle">
+							</td>
+			<!-- ******************  -->
+		</tr>
+			  </tbody>
+	</table>	
+
+	<p><h6><strong>Fonte:</strong> <a href="http://www.ipma.pt/" target="_blank"> Instituto Português do Mar e da Atmosfera</a></h6></p>
+	<p><h6><strong>Nota:</strong> Dados extraidos de ficheiro JSON (https://api.ipma.pt/json/alldata/1100900.json) e convertidos para uma tabela HTML</h6></p> 
+
+		
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script>
+		
+		$(document).ready(function(){
+			//alert($("#numDias").val());
+			//alert("!" + $("#ddVento0").text() + "!");
+			
+			rodaImagensDirecaoVento($("#numDias").val());			
+		});
+					
+
+		function rodaImagensDirecaoVento(numDias) 
+		{
+			for (i=0; i < numDias; i++)
+			{
+				var rodarGraus = $("#rodarIconDV" + i).val();
+				$('#iconDV' + i).attr('style', "transform: rotate(" + rodarGraus + "deg);"); 				
+			}
+		}
+
+	</script>
+	
+  
+<div style="text-align:right;position:fixed;bottom:3px;right:3px;width:100%;z-index:999999;cursor:pointer;line-height:0;display:block;"><a target="_blank" href="https://www.freewebhostingarea.com" title="Free Web Hosting with PHP5 or PHP7"><img alt="Free Web Hosting" src="https://www.freewebhostingarea.com/images/poweredby.png" style="border-width: 0px;width: 180px; height: 45px; float: right;"></a></div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+    1  history
+    2  amn 1 print
+    3  man 1 printf
+    4  man -a printf
+    5  which ls
+    6  which ps
+    7  which less
+    8  which more
+    9  type if
+   10  type cd
+   11  type ls
+   12  ls -f
+   13  ls -lt
+   14  ls -a
+   15  ls -a Desktop/
+   16  ls -t
+   17  ls -l
+   18  ls -r
+   19  ls -r | ls
+   20  ls -r | -s
+   21  ls
+   22  cd Desktop/
+   23  mkdir demo
+   24  cd demo
+   25  tree
+   26  mkdir dir1
+   27  cd dir1/
+   28  mkdir dir2
+   29  cd
+   30  cd Desktop/demo/
+   31  tree
+   32  mkdir dir3 dir4
+   33  rmdir dir 3
+   34  rmdir dir3
+   35  tree
+   36  echo ola>dir4/file
+   37  tree
+   38  mkdir -p dir5/dir6/dir7
+   39  tree
+   40  cd
+   41  mkdir temp
+   42  mkdir temp/testes
+   43  tree
+   44  mkdir trabalhos
+   45  mkdir aulas
+   46  tree
+   47  tree -t
+   48  tree -T
+   49  tree -t | tall -n6
+   50  tree -t | tail -n6
+   51  cd trabalhos/
+   52  cd ..
+   53  ls -lR
+   54  cd Desktop/demo/
+   55  cp file dir5/dir6/dir7
+   56  tree
+   57  cp dir4/file dir5/dir6/dir7
+   58  tree
+   59  cp dir4/file file2
+   60  tree
+   61  echo ola >> dir4/file 
+   62  cat dir4/file 
+   63  cp dir4/file file2
+   64  cp -i dir4/file file2
+   65  cp -r dir1 dir4
+   66  tree
+   67  cd
+   68  cp /etc/services trabalhos/
+   69  tree
+   70  cd
+   71  rmdir temp
+   72  rmdir -r temp
+   73  rm -r temp
+   74  tree
+   75  mv trabalhos/ aulas/
+   76  tree
+   77  head aulas/trabalhos/services 
+   78  ls -l
+   79  tree
+   80  chmod rwx aulas/trabalhos/
+   81  cd Desktop/demo/
+   82  tree
+   83  sudo chown pulsa file2
+   84  sudo chown pulse file2
+   85  ls -l
+   86  sudo chgrp pulse file2
+   87  ls -l
+   88  echo 123>file1
+   89  tree
+   90  chmod u=rwx,g=rwx,o= dir1
+   91  ls -l
+   92  sudo chown pulse:pulse dir1
+   93  cd dir1
+   94  sudo chmod o+r dir1
+   95  ls dir1
+   96  sudo chmod o+x dir1
+   97  ls dir1
+   98  sudo chmod o+rx dir1
+   99  ls -l
+  100  chmod u=rw,g=rw,o= file1
+  101  cat file1
+  102  ls
+  103  mv ls myls
+  104  ls>myls
+  105  chmod 644 myls 
+  106  ls -l
+  107  cd
+  108  chmod 754 aulas/trabalhos
+  109  ls -l
+  110  ls -l aulas/
+  111  chmod 751 aulas/trabalhos
+  112  ls -l aulas/
+  113  chmod 754 aulas/trabalhos
+  114  ls -l aulas/
+  115  chmod g=r aulas/trabalhos/
+  116  ls -l
+  117  ls -l aulas/
+  118  cd Desktop/
+  119  mkdir cmdHistory
+  120  ls
+  121  cd cmdHistory/
+  122  history>04032020cmdhty
