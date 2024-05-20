@@ -1,0 +1,14 @@
+# args.ggo
+# Ficheiro de configuração do programa SO
+
+purpose "Este programa tem como objetivo demonstrar o uso do gengetopt"
+package "exemplo_opt"
+version "1.0"
+
+# Options
+option  "nome"          n "Parâmetro nome"       string     optional
+option  "valor"         v "Parâmetro valor"      int        required
+option  "idade"         i "Parâmetro idade"      short      optional
+option  "habitantes"    b "Parâmetro habitantes" long       required
+option  "tonelagem"     t "Parâmetro tonelagem"  float      optional
+option  "margem"        m "Parâmetro margem"     double     optional
